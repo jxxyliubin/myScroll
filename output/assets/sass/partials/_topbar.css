@@ -1,0 +1,13 @@
+/*
+* @name: topbar
+* @description: 定义全站通栏样式.
+* @author: Lin yi(linyi6@yy.com)
+*/
+#header {
+  height: 465px;
+  background: url(images/bg_header.png) center top no-repeat; }
+  #header .banner {
+    margin: 0 auto;
+    width: 980px; }
+
+/*# sourceMappingURL=_topbar.css.map */

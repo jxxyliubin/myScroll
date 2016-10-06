@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/*
+* @name: layout
+* @description: 布局框架样式.
+* @author: Lin Yi(Linyi6@yy.com)
+*/
+
+.grid-c,
+.grid-c2f,
+.grid-c2b,
+.grid-c2s,
+.grid-c3d {@include margin-center;width:980px;}
+
+.grid-c,
+.grid-c2f,
+.grid-c2b,
+.grid-c3d,
+.main-wrap,
+.col-aside,
+.col-extra,
+.grid-c2s {@extend %clearfix;}
+
+// bug fix:当主栏没有内容时，在ff和chrome等浏览器下布局错乱
+.col-main {width:100%;min-height:1px;}
+
+.col-main,
+.col-aside,
+.col-extra {@extend %fl;}
+
+// bug fix 解决chrome和safari下选取文字时，背景区域不对
+.main-wrap {
+    body:first-of-type & {position:relative;}
+}
+
+
+/************************************************
+ *2 column
+ *normal - aside|main
+ *     f - main|aside      用于业务页面
+ *     b - main|aside(big) 用于播放页面
+************************************************/
+.grid-c2f {
+    .main-wrap {margin: 0 auto}
+    .col-aside {width:168px;margin-left:-168px;}
+}
+
+.grid-c2b {
+    .main-wrap {margin-right:280px;}
+    .col-aside {width:280px;margin-left:-280px;}
+}
+
+
+/************************************************
+ *3 column
+ *normal - aside|main|extra
+ *     f - extra|main|aside
+ *     e - main|aside|extra
+ *     d - main|extra|aside  用于主页面
+ *     c - aside|extra|main
+ *     b - extra|aside|main
+************************************************/
+
+.grid-c3d {
+    .main-wrap {margin-right:390px;}
+    .col-aside {width:200px;margin-left:-200px;}
+    .col-extra {width:190px;margin-left:-390px;}
+}
+

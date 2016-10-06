@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/*
+* @name: topbar
+* @description: 定义全站通栏样式.
+* @author: Lin yi(linyi6@yy.com)
+*/
+
+#header {
+    height:240px;
+    //background: url(images/bg_header.png) center top no-repeat;
+    .banner {
+        margin:0 auto;
+        width:980px;
+        height: 240px;
+        position: relative;
+        background: url(images/bg_banner.png) 0 0 no-repeat;
+        a{
+            position: absolute;
+            background: url(./images/btn_spring.png) no-repeat;
+            _background: url(./images/btn_spring.gif) no-repeat;
+        }
+        .getmedal{
+            top: 45px;
+            left: 127px;
+            width: 151px;
+            height: 102px;
+            background-position: 0 -297px;
+            &:hover{
+                background-position: 0 -399px;
+            }
+        }
+        .getshell{
+            display: none;
+            top: 50px;
+            left: 712px;
+            width: 151px;
+            height: 99px;
+            background-position: -68px 0;            
+            &:hover{
+                background-position: -68px -99px; 
+            }
+        }
+        .getshell_dis{
+            background-position: -68px -198px;
+            cursor: default;
+            &:hover{
+                background-position: -68px -198px;
+                cursor: default;
+            }
+        }
+        .btn-order{
+            display: none;
+            top: 3px;
+            left: 846px;
+            width: 68px;
+            height: 68px;
+            background-position: 0 0;            
+            &:hover{
+                background-position: 0 -68px; 
+            }
+        }
+        .btn-order-disable{
+            background-position: 0 -136px;
+            cursor: default;
+            &:hover{
+                background-position: 0 -136px;
+                cursor: default;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+/*
+* @name: scaffold
+* @description: 定义全站的初始样式.
+* @author: Jin Ye(jinye@yy.com)
+*/
+html {
+  background: url(images/bg.png) repeat-y center top; }
+
+body {
+  color: #666;
+  font: 12px/1.5 tahoma, arial, sans-serif; }
+
+/* IE6 Fixed Position Jitter Fix */
+* html {
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+* html, * html body {
+  background-image: url(about:blank);
+  background-attachment: fixed; }
+
+.hide {
+  display: none;
+  visibility: hidden; }
+
+.fixed {
+  position: fixed !important; }
+
+a {
+  color: #333; }
+  a:hover {
+    color: #FA7408;
+    text-decoration: none; }
+
+/*# sourceMappingURL=_scaffold.css.map */

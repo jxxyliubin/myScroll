@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "file": "",
+  "sources": ["_scaffold.scss"],
+  "names": [],
+  "mappings": ";;;;;AAQA;EAAM,YAAqC;;AAG3C;EACI,OAAO;EACP,MAAe;;;AAKnB,EAAE;EACE,YAAY;EACZ,YAAY;;AAGhB,EAAE,MAAM,EAAE,KAAK;EAEX,kBAAiB;EACjB,uBAAsB;;AAG1B;EAAO,SAAQ;EAAK,YAAY;;AAEhC;EACI,UAAU;;AAGd;EACI,OAAO;EAAX,CAAC;IAEO,OAAO;IACP,iBAAiB"
+}

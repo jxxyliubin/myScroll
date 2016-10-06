@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/*
+* @name: footer
+* @description: 定义全站页脚样式.
+* @author: Jin Ye(jinye@yy.com)
+*/
+
+/*#footer {
+    margin-top: 80px;
+    height: 136px;
+    border-top:3px solid #00664e;
+    .grid-c {
+        padding-top: 45px;
+        color:#fff;
+        text-align: center;
+    }
+    a {color:#fff;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    span {
+        margin: 0 10px;
+        color:#fff;
+    }
+}*/
+.footer {
+    margin-top: 70px;
+    padding-bottom: 40px;
+    //background-color: #eeeff1;
+    border-top: 3px solid #00664e;
+    color: #fff
+}
+
+.footer .friendly {
+    padding: 20px 0;
+    text-align: center;
+    background-color: #dfe0e5
+}
+
+.footer .friendly strong {
+    margin-right: 10px
+}
+
+.footer .friendly a,.footer .friendly span {
+    color: #4a4a4a
+}
+
+.footer .grid-c {
+    padding-top: 45px;
+    text-align: center
+}
+
+.footer a {
+    color: #fff
+}
+
+.footer a:hover {
+    text-decoration: underline
+}
+
+.footer span {
+    margin: 0 10px;
+    color: #ddd
+}

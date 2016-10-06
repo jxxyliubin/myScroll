@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+//FileName   : mixin.scss
+//project    : Personal Center
+//Desc       : 样式代码片段，快速和重复调用
+//LastChange : 2013-01-16T16:31:24
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+%clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%fl {
+    float:left;
+    _display:inline;
+}
+
+%fr {
+    float:right;
+    _display:inline;
+}
+
+@mixin inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+@mixin margin-center {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+// text overflow
+// -------------------------
+// requires inline-block or block for proper styling
+@mixin text-overflow() {
+  word-wrap: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// css image replacement
+// -------------------------
+// source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+@mixin hide-text {
+    text-indent:-9999px;
+  outline:none;
+}
+
+// opacity
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+// css3 properties
+// --------------------------------------------------
+
+// border radius
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+// drop shadows
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// transitions
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+// transformations
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+@mixin scale($ratio) {
+  -webkit-transform: scale($ratio);
+     -moz-transform: scale($ratio);
+      -ms-transform: scale($ratio);
+       -o-transform: scale($ratio);
+          transform: scale($ratio);
+}
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+     -moz-transform: translate($x, $y);
+      -ms-transform: translate($x, $y);
+       -o-transform: translate($x, $y);
+          transform: translate($x, $y);
+}
+
+@mixin skew($x, $y) {
+  -webkit-transform: skew($x, $y);
+     -moz-transform: skew($x, $y);
+      -ms-transform: skew($x, $y);
+       -o-transform: skew($x, $y);
+          transform: skew($x, $y);
+}
+
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate($x, $y, $z);
+     -moz-transform: translate($x, $y, $z);
+      -ms-transform: translate($x, $y, $z);
+       -o-transform: translate($x, $y, $z);
+          transform: translate($x, $y, $z);
+}
+
+// backface visibility
+// prevent browsers from flickering when using css 3d transforms.
+// default value is `visible`, but can be changed to `hidden
+// see git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
+@mixin backface-visibility($visibility){
+  -webkit-backface-visibility: $visibility;
+     -moz-backface-visibility: $visibility;
+      -ms-backface-visibility: $visibility;
+          backface-visibility: $visibility;
+}
+
+// background clipping
+// heads up: ff 3.6 and under need "padding" instead of "padding-box"
+@mixin background-clip($clip) {
+  -webkit-background-clip: $clip;
+     -moz-background-clip: $clip;
+          background-clip: $clip;
+}
+
+// background sizing
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+     -moz-background-size: $size;
+       -o-background-size: $size;
+          background-size: $size;
+}
+
+// background gradient color
+@mixin background-gradient($formColor,$toColor,$default) {
+  @if ($default) {
+    background-color: $default;
+  }
+  background-image: -webkit-linear-gradient(top, $formColor, $toColor);
+  background-image:    -moz-linear-gradient(top, $formColor, $toColor);
+  background-image:     -ms-linear-gradient(top, $formColor, $toColor);
+  background-image:      -o-linear-gradient(top, $formColor, $toColor);
+  background-image:         linear-gradient(top, $formColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$formColor', endColorstr='$formColor' );
+}
+
+
+// box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+      -ms-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+
+// user select
+// for selecting text on the page
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select;
+       -o-user-select: $select;
+          user-select: $select;
+}
+
+@mixin shadow-box($border: #fff .5em solid, $shadow: rgba(#000, .15) 0 1px 4px, $border-radius: .3em) {
+  @include border-radius($border-radius);
+  @include box-shadow($shadow);
+  @include box-sizing(border-box);
+  border: $border;
+}
+
+@mixin ie6-alpha-bg($img) {
+  _background-image: none;
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$img}', sizingMethod='normal');
+}
+
+// border箭头
+// $color 箭头颜色
+// $width 箭头宽度
+// $direction 箭头方向
+@mixin triangle($direction:"down", $width:10px, $display:"inline-block", $color:#666){
+  width:0;
+  height:0;
+  font-size: 0;
+  overflow: hidden;
+  @if $display == "inline-block" {
+    @include inline-block;
+  }
+  @if $display == "absolute" {
+    position: absolute;
+  }
+
+  @if ($direction == "up") or ($direction == "down") or ($direction == "right") or ($direction == "left") {
+    border-width:$width;
+
+    @if $direction == "up" {
+      border-style:dashed dashed solid;
+      border-color:transparent transparent $color;
+    }
+    @else if $direction == "left" {
+        border-style:dashed solid dashed dashed;
+        border-color:transparent $color transparent transparent;
+    }
+    @else if $direction == "right" {
+        border-style:dashed dashed dashed solid;
+        border-color:transparent transparent transparent $color;
+    }
+    @else {
+        border-style:solid dashed dashed;
+        border-color:$color transparent transparent;
+    }
+
+  }
+
+  @if ($direction == "right-up") or ($direction == "left-up") {
+      border-top: $width solid;
+
+      @if $direction == "right-up" {
+        border-left: $width solid transparent;
+
+      } @else if $direction == "left-up" {
+        border-right: $width solid transparent;
+      }
+    _display:none;
+  }
+
+  @else if ($direction == "right-down") or ($direction == "left-down") {
+      border-bottom: $width solid;
+
+      @if $direction == "right-down" {
+        border-left: $width solid transparent;
+
+      } @else if $direction == "left-down" {
+        border-right: $width solid transparent;
+      }
+      _display:none;
+  }
+}
+
+// Cross browser min-height mixin.
+@mixin min-height($value) {
+  height: auto !important;
+  _height: $value;
+  min-height: $value;
+}
